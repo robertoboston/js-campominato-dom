@@ -41,6 +41,8 @@ header{
     cursor: pointer;
 }
 
+
+
 .azure{
     background-color: azure;
 }
@@ -67,3 +69,4 @@ footer{
 .events-none{
     pointer-events: none;
 }
+

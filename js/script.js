@@ -1,8 +1,8 @@
-function generateGrid (){
+function generateGrid (num){
 
     document.querySelector('.grid').innerHTML=" ";
 
-    for(let i = 1; i<=100; i++){
+    for(let i = 1; i<=num; i++){
         divItem = document.createElement('div')
         
         grid.appendChild(divItem)
@@ -48,6 +48,8 @@ function generateBombsNumb (min,max){
 
 }
 
+
+
 let clicks = 0;
 
 function onClick() {
@@ -62,9 +64,26 @@ let divItem;
 const playBtn = document.getElementById('btn')
 
 playBtn.addEventListener('click', function(){
-    generateGrid()
+
+    let valueSelect = document.getElementById('difficolta').value
+    let num;
+    if(valueSelect == 1){
+        num = 100
+
+    }
+    else if(valueSelect == 2){
+        num = 81
+
+    }
+    else if(valueSelect = 3){
+        num=49
+    }
+
+
+
+    generateGrid(num)
     generateBombsNumb(1,16)
-    
+
 
 })
 
