@@ -6,8 +6,18 @@ function generateGrid (num){
         divItem = document.createElement('div')
         
         grid.appendChild(divItem)
+
+        if(num == 100 ){
+            divItem.classList.add('square')
+        }
+        else if(num == 81){
+            divItem.classList.add('square-81')
+        }
+        else{
+            divItem.classList.add('square-49')
+        }
+
     
-        divItem.classList.add('square')
 
         divItem.innerText=i
 
@@ -69,21 +79,17 @@ playBtn.addEventListener('click', function(){
     let num;
     if(valueSelect == 1){
         num = 100
-
     }
     else if(valueSelect == 2){
         num = 81
 
     }
-    else if(valueSelect = 3){
+    else{
         num=49
     }
 
-
-
     generateGrid(num)
     generateBombsNumb(1,16)
-
 
 })
 
