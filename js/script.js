@@ -17,15 +17,14 @@ function generateGrid (num){
             divItem.classList.add('square-49')
         }
 
-    
-
         divItem.innerText=i
 
         divItem.addEventListener('click',function(){
             this.classList.add('azure')
             console.log(this.innerText)
             onClick()
-
+            
+        
             if(check.includes(parseInt(this.innerText))){
                this.classList.add('red')
                let risultato= document.getElementById('risultato')
@@ -60,36 +59,42 @@ function generateBombsNumb (min,max){
 
 
 
-let clicks = 0;
-
 function onClick() {
-  clicks += 1;
+    clicks += 1;
 };
 
 
-let check = generateBombsNumb(1,16)
-console.log(check)
+let check;
+let valueSelect = document.getElementById('difficolta').value
+let clicks = 0;
 let grid= document.getElementById('grid')
 let divItem;
 const playBtn = document.getElementById('btn')
 
 playBtn.addEventListener('click', function(){
 
-    let valueSelect = document.getElementById('difficolta').value
-    let num;
+    valueSelect = document.getElementById('difficolta').value
+
     if(valueSelect == 1){
         num = 100
+        min = 1
+        max = 100
     }
     else if(valueSelect == 2){
         num = 81
-
+        min = 1
+        max = 81
     }
     else{
-        num=49
+        num = 49
+        min = 1
+        max = 49
     }
 
+    check = generateBombsNumb(min,max)
     generateGrid(num)
-    generateBombsNumb(1,16)
+    generateBombsNumb(min,max)
+    console.log(check)
 
 })
 
