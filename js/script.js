@@ -22,6 +22,7 @@ function generateGrid (num){
         divItem.addEventListener('click',function(){
             clicks += 1
             console.log(clicks)
+            let numWin = num - check.len
 
             if(check.includes(parseInt(this.innerText))){
                this.classList.add('red')
@@ -34,11 +35,7 @@ function generateGrid (num){
                this.classList.add('azure')
                console.log(this.innerText)
                
-               if(clicks == 84){
-                alert('hai vinto')
-               }
             } 
-            
             
         })
         
