@@ -22,7 +22,6 @@ function generateGrid (num){
         divItem.addEventListener('click',function(){
             clicks += 1
             console.log(clicks)
-            let numWin = num - check.len
 
             if(check.includes(parseInt(this.innerText))){
                this.classList.add('red')
