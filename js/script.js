@@ -1,5 +1,5 @@
 function generateGrid (num){
-
+    let divItem;
     document.querySelector('.grid').innerHTML=" ";
 
     for(let i = 1; i<=num; i++){
@@ -20,18 +20,25 @@ function generateGrid (num){
         divItem.innerText=i
 
         divItem.addEventListener('click',function(){
-            this.classList.add('azure')
-            console.log(this.innerText)
-            onClick()
-            
-        
+            clicks += 1
+            console.log(clicks)
+
             if(check.includes(parseInt(this.innerText))){
                this.classList.add('red')
                let risultato= document.getElementById('risultato')
-               risultato.innerText=`Hai perso, il tuo punteggio è: ${clicks}`
-               grid.classList.add('events-none')
+               risultato.innerText=`Hai perso il tuo punteggio è ${clicks}`
+               grid.classList.add('events-none')   
+                
+
+            }else{
+               this.classList.add('azure')
+               console.log(this.innerText)
+               
+               if(clicks == 84){
+                alert('hai vinto')
+               }
+            } 
             
-            }
             
         })
         
@@ -44,7 +51,7 @@ function generateBombsNumb (min,max){
     let bombs=[];
     let i = 0
 
-    while(i <16){
+    while(i < 16){
         let number = Math.floor(Math.random() * (max - min + 1)) + min
 
         if(!bombs.includes(number)){
@@ -57,23 +64,14 @@ function generateBombsNumb (min,max){
 
 }
 
-
-
-function onClick() {
-    clicks += 1;
-};
-
-
+let clicks = 0
 let check;
-let valueSelect = document.getElementById('difficolta').value
-let clicks = 0;
 let grid= document.getElementById('grid')
-let divItem;
 const playBtn = document.getElementById('btn')
 
 playBtn.addEventListener('click', function(){
 
-    valueSelect = document.getElementById('difficolta').value
+    let valueSelect = document.getElementById('difficolta').value
 
     if(valueSelect == 1){
         num = 100
@@ -93,11 +91,9 @@ playBtn.addEventListener('click', function(){
 
     check = generateBombsNumb(min,max)
     generateGrid(num)
-    generateBombsNumb(min,max)
     console.log(check)
 
 })
-
 
 
 
