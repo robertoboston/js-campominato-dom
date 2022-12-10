@@ -20,21 +20,31 @@ function generateGrid (num){
         divItem.innerText=i
 
         divItem.addEventListener('click',function(){
+            let risultato= document.getElementById('risultato')
             clicks += 1
-            console.log(clicks)
+            let win = num - check.length
 
             if(check.includes(parseInt(this.innerText))){
                this.classList.add('red')
-               let risultato= document.getElementById('risultato')
+               risultato.classList.add('lose')
                risultato.innerText=`Hai perso il tuo punteggio è ${clicks}`
                grid.classList.add('events-none')   
                 
 
             }else{
                this.classList.add('azure')
+               this.classList.add('events-div-none')
                console.log(this.innerText)
                
-            } 
+            }
+            
+            
+
+            if(clicks == win){
+                risultato.classList.add('win')
+                risultato.innerText=`Hai vinto il tuo punteggio è ${clicks}`
+                grid.classList.add('events-none')   
+            }
             
         })
         

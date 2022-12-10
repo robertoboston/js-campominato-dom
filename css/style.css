@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+body{
+    font-family: 'elvetica',sans-serif;
+}
+
 header{
     height: 100px;
     background-color: white;
@@ -15,7 +19,7 @@ header{
 
 
 .container{
-    background-color: aquamarine;
+    background-color: yellowgreen;
     display: flex;
     justify-content: center;
     padding: 50px;
@@ -44,7 +48,8 @@ header{
 
 
 .azure{
-    background-color: azure;
+    background-color: white;
+    color:black;
 }
 
 footer{
@@ -55,9 +60,10 @@ footer{
     padding: 10px;
     cursor: pointer;
     margin: 10px;
-    background-color: deeppink;
+    background-color: rgb(47, 5, 47);
     border-radius: 20px;
     border-style: none;
+    color: white;
     
 }
 
@@ -98,7 +104,20 @@ footer{
     width: 100px;
     padding: 10px;
     border-radius: 20px;
-    background-color: black;
+    background-color:rgb(47, 5, 47) ;
     color: white;
+    cursor: pointer;
 
+}
+
+.events-div-none{
+    pointer-events: none;
+}
+
+.lose{
+    color: red;
+}
+
+.win{
+    color: green;
 }
