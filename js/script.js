@@ -1,6 +1,7 @@
 function generateGrid (num){
     let divItem;
     document.querySelector('.grid').innerHTML=" ";
+    let clicks = 0
 
     for(let i = 1; i<=num; i++){
         divItem = document.createElement('div')
@@ -21,7 +22,6 @@ function generateGrid (num){
 
         divItem.addEventListener('click',function(){
             let risultato= document.getElementById('risultato')
-            clicks ++
             console.log(clicks)
             let win = num - check.length
 
@@ -36,6 +36,7 @@ function generateGrid (num){
                this.classList.add('azure')
                this.classList.add('events-div-none')
                console.log(this.innerText)
+               clicks += 1
                
             }
             
@@ -70,7 +71,6 @@ function generateBombsNumb (min,max){
 }
 
 let check;
-let clicks = 0
 let grid= document.getElementById('grid')
 const playBtn = document.getElementById('btn')
 
