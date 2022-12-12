@@ -21,13 +21,14 @@ function generateGrid (num){
 
         divItem.addEventListener('click',function(){
             let risultato= document.getElementById('risultato')
-            clicks += 1
+            clicks ++
+            console.log(clicks)
             let win = num - check.length
 
             if(check.includes(parseInt(this.innerText))){
                this.classList.add('red')
                risultato.classList.add('lose')
-               risultato.innerText=`Hai perso il tuo punteggio è ${clicks}`
+               risultato.innerText=`Hai perso il tuo punteggio è: ${clicks}`
                grid.classList.add('events-none')   
                 
 
@@ -38,11 +39,9 @@ function generateGrid (num){
                
             }
             
-            
-
             if(clicks == win){
                 risultato.classList.add('win')
-                risultato.innerText=`Hai vinto il tuo punteggio è ${clicks}`
+                risultato.innerText=`Hai vinto il tuo punteggio è: ${clicks}`
                 grid.classList.add('events-none')   
             }
             
@@ -70,8 +69,8 @@ function generateBombsNumb (min,max){
 
 }
 
-let clicks = 0
 let check;
+let clicks = 0
 let grid= document.getElementById('grid')
 const playBtn = document.getElementById('btn')
 
