@@ -22,6 +22,7 @@ function generateGrid (num){
 
         divItem.addEventListener('click',function(){
             let risultato= document.getElementById('risultato')
+            clicks++
             console.log(clicks)
             let win = num - check.length
 
@@ -36,7 +37,7 @@ function generateGrid (num){
                this.classList.add('azure')
                this.classList.add('events-div-none')
                console.log(this.innerText)
-               clicks += 1
+               
                
             }
             
